@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima Project - RoadMap и Портрет CEO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .lightbox.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        
+        .screenshot-image {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .screenshot-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                position: fixed;
+            }
+            
+            .lightbox-caption {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Lima</h1>
+                <span>Интегрированная CRM для фармахолдинга</span>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn active" data-section="roadmap">RoadMap</button>
+                <button class="nav-btn" data-section="ceo">Портрет CEO</button>
+                <button class="nav-btn" data-section="claude-training">Тренинг по Claude</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- RoadMap Section -->
+        <section id="roadmap" class="content-section active">
+            <div class="container">
+                <div class="section-header">
+                    <h2>RoadMap проекта Lima</h2>
+                    <p>Детальный план развития до конца 2025 года</p>
+                </div>
+
+                <!-- Project Status -->
+                <div class="status-grid">
+                    <div class="status-card">
+                        <div class="status-number">400+</div>
+                        <div class="status-label">Активных пользователей</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-number">4</div>
+                        <div class="status-label">Маркетинговых групп</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-number">7</div>
+                        <div class="status-label">Модулей системы</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-number">3</div>
+                        <div class="status-label">Года разработки</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-number">6</div>
+                        <div class="status-label">Участников команды</div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline">
+                    <!-- Phase 1: Реструктуризация -->
+                    <div class="phase-block">
+                        <div class="phase-header">
+                            <h3>Фаза 1: Реструктуризация и подготовка к инвестициям</h3>
+                            <span class="phase-period">Июнь - Август 2025</span>
+                            <div class="phase-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>60% готовности</span>
+                            </div>
+                        </div>
+
+                        <!-- June Details -->
+                        <div class="month-details">
+                            <h4>Июнь 2025 - Комплексный аудит и смена курса проекта</h4>
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-style: italic;">Приход Артема в проект. Проведение интервью с командой, аудит процессов, принятие стратегического решения о сокращении функционала и фокусе на инвестиционной готовности.</p>
+                            <div class="weeks-grid">
+                                <div class="week-card" style="border-left: 4px solid #10b981;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #10b981;">Неделя 1</span>
+                                        <span class="week-dates">10-16 июня</span>
+                                    </div>
+                                    <h5>✅ Проведен аудит (завершено)</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Артем</span>
+                                            <ul>
+                                                <li>✅ Интервью с командой проведены</li>
+                                                <li>✅ Аудит процессов завершен</li>
+                                                <li>✅ Анализ готовности компонентов</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Команда</span>
+                                            <ul>
+                                                <li>✅ Смена курса проекта</li>
+                                                <li>✅ Новые цели определены</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #f59e0b;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #f59e0b;">Неделя 2</span>
+                                        <span class="week-dates">17-23 июня</span>
+                                    </div>
+                                    <h5>🔄 Техаудит и внедрение Notion (в процессе)</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Артем</span>
+                                            <ul>
+                                                <li>🔄 Техаудит всех модулей</li>
+                                                <li>📋 Определение критических задач</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Анна</span>
+                                            <ul>
+                                                <li>🆕 Получение доступа к Notion</li>
+                                                <li>📝 Настройка рабочего пространства</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 3</span>
+                                        <span class="week-dates">24-30 июня</span>
+                                    </div>
+                                    <h5>Создание бэклога и новые процессы</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Анна</span>
+                                            <ul>
+                                                <li>📋 Создание структуры бэклога в Notion</li>
+                                                <li>🔄 Миграция с Trello на Notion</li>
+                                                <li>👥 Обучение команды новым процессам</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Артем</span>
+                                            <ul>
+                                                <li>⚙️ Разработка процессов для спринтов</li>
+                                                <li>📊 Внедрение методологии MoSCoW</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 4</span>
+                                        <span class="week-dates">1-7 июля</span>
+                                    </div>
+                                    <h5>Первый спринт и финализация процессов</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Вся команда</span>
+                                            <ul>
+                                                <li>🚀 Запуск первого спринта</li>
+                                                <li>📋 Наполнение бэклога задачами</li>
+                                                <li>⚙️ Финализация процессов до конца месяца</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- July Details -->
+                        <div class="month-details">
+                            <h4>Июль 2025 - Внедрение AI-инструментов и ускорение разработки</h4>
+                            <div class="weeks-grid">
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 1</span>
+                                        <span class="week-dates">7-13 июля</span>
+                                    </div>
+                                    <h5>Внедрение AI-инструментов разработки</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Вадим</span>
+                                            <ul>
+                                                <li>🤖 Внедрение Cursor для backend</li>
+                                                <li>⚡ Настройка автоматического рефакторинга</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Ильяс</span>
+                                            <ul>
+                                                <li>🤖 Cursor для frontend разработки</li>
+                                                <li>🧩 Компонентизация Legacy кода</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 2</span>
+                                        <span class="week-dates">14-20 июля</span>
+                                    </div>
+                                    <h5>Отработка спринтов и технических заданий</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Анна</span>
+                                            <ul>
+                                                <li>📝 Процессы работы с техническими заданиями</li>
+                                                <li>📊 Метрики и оценка скорости команды</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Команда</span>
+                                            <ul>
+                                                <li>🏃‍♂️ Второй спринт с новыми процессами</li>
+                                                <li>📈 Измерение ускорения разработки</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 3</span>
+                                        <span class="week-dates">21-27 июля</span>
+                                    </div>
+                                    <h5>Техническая стабилизация</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Вадим</span>
+                                            <ul>
+                                                <li>🔧 Устранение технического долга</li>
+                                                <li>⚡ Оптимизация производительности</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Алексей</span>
+                                            <ul>
+                                                <li>🏗️ Архитектурные улучшения</li>
+                                                <li>☁️ DevOps оптимизация</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 4</span>
+                                        <span class="week-dates">28 июля - 3 августа</span>
+                                    </div>
+                                    <h5>Финализация процессов разработки</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Артем + Анна</span>
+                                            <ul>
+                                                <li>📋 Финальная версия процессов работы</li>
+                                                <li>📊 Документирование достигнутого ускорения</li>
+                                                <li>🎯 Подготовка к августовской фазе</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- August Details -->
+                        <div class="month-details">
+                            <h4>Август 2025 - Доведение до рабочего состояния</h4>
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-style: italic;">Финальный этап первой фазы: доведение проекта до состояния готового к размещению пользователей. Частичное управление Артемом и Иваном.</p>
+                            <div class="weeks-grid">
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 1</span>
+                                        <span class="week-dates">4-10 августа</span>
+                                    </div>
+                                    <h5>Интенсивная разработка критического функционала</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Команда разработки</span>
+                                            <ul>
+                                                <li>🚀 Реализация Must-Have функций из бэклога</li>
+                                                <li>🧪 Тестирование ключевых модулей</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Артем + Иван</span>
+                                            <ul>
+                                                <li>👥 Совместное управление проектом</li>
+                                                <li>🎯 Приоритизация задач</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 2</span>
+                                        <span class="week-dates">11-17 августа</span>
+                                    </div>
+                                    <h5>Подготовка пользовательской среды</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Ильяс</span>
+                                            <ul>
+                                                <li>🎨 UX/UI доработки для пользователей</li>
+                                                <li>📱 Адаптация интерфейса</li>
+                                            </ul>
+                                        </div>
+                                        <div class="task-item">
+                                            <span class="team-member">Алексей</span>
+                                            <ul>
+                                                <li>🛡️ Настройка безопасности</li>
+                                                <li>📊 Мониторинг и логирование</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card">
+                                    <div class="week-header">
+                                        <span class="week-number">Неделя 3</span>
+                                        <span class="week-dates">18-24 августа</span>
+                                    </div>
+                                    <h5>Интеграционное тестирование</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Вся команда</span>
+                                            <ul>
+                                                <li>🧪 Полное интеграционное тестирование</li>
+                                                <li>🐛 Исправление критических багов</li>
+                                                <li>📋 Подготовка документации для пользователей</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #10b981;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #10b981;">Неделя 4</span>
+                                        <span class="week-dates">25-31 августа</span>
+                                    </div>
+                                    <h5>🎯 Готовность к размещению пользователей</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Артем + Иван</span>
+                                            <ul>
+                                                <li>✅ Финальная приемка системы</li>
+                                                <li>👥 Подготовка к онбордингу пользователей</li>
+                                                <li>🚀 Переход ко второй фазе</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase Summary -->
+                        <div class="phase-summary" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 2rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #0ea5e9;">
+                            <h5 style="color: #0c4a6e; margin-bottom: 1rem;">🎯 Ключевые достижения первой фазы:</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong>📊 Процессы:</strong><br>
+                                    <small>Внедрение спринтов, бэклога, новых методологий</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong>🤖 Технологии:</strong><br>
+                                    <small>AI-инструменты, ускорение разработки</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong>🎯 Продукт:</strong><br>
+                                    <small>Рабочее состояние, готовность к пользователям</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong>💼 Стратегия:</strong><br>
+                                    <small>Фокус на инвестиционную готовность</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Инвестиционная готовность -->
+                    <div class="phase-block">
+                        <div class="phase-header">
+                            <h3>Фаза 2: Привлечение инвестиций и коммерциализация</h3>
+                            <span class="phase-period">Сентябрь - Ноябрь 2025</span>
+                            <div class="phase-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%"></div>
+                                </div>
+                                <span>10% готовности</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Investment Strategy -->
+                        <div class="phase-goals" style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                            <h5 style="color: #92400e; margin-bottom: 1.5rem;">🎯 Ключевые цели фазы привлечения инвестиций:</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #fbbf24;">
+                                    <h6 style="color: #92400e; margin-bottom: 1rem;">📋 Документооборот</h6>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Заключение договора на привлечение инвестиций</li>
+                                        <li>Подготовка полного бизнес-плана</li>
+                                        <li>Создание инвестиционной презентации</li>
+                                        <li>Due diligence документация</li>
+                                    </ul>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #fbbf24;">
+                                    <h6 style="color: #92400e; margin-bottom: 1rem;">👥 Поиск инвесторов</h6>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Исследование венчурного рынка в СНГ</li>
+                                        <li>Networking с потенциальными инвесторами</li>
+                                        <li>Участие в питч-сессиях и конференциях</li>
+                                        <li>Работа с акселераторами</li>
+                                    </ul>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #fbbf24;">
+                                    <h6 style="color: #92400e; margin-bottom: 1rem;">🚀 Продуктовое развитие</h6>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Масштабирование до 8-10 маркетинговых групп внутри холдинга</li>
+                                        <li>Сбор детальной аналитики использования</li>
+                                        <li>Подготовка к выходу на внешний рынок</li>
+                                        <li>MVP для внешних клиентов</li>
+                                    </ul>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #fbbf24;">
+                                    <h6 style="color: #92400e; margin-bottom: 1rem;">💰 Финансовые цели</h6>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Привлечение $150-300k pre-seed инвестиций</li>
+                                        <li>Валидация бизнес-модели</li>
+                                        <li>Первые внешние контракты (пилоты)</li>
+                                        <li>Подготовка к seed раунду</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Investment Timeline -->
+                        <div class="investment-timeline" style="margin-top: 2rem;">
+                            <h5 style="color: var(--gray-800); margin-bottom: 1.5rem; text-align: center;">📅 Timeline привлечения инвестиций</h5>
+                            <div class="weeks-grid">
+                                <div class="week-card" style="border-left: 4px solid #f59e0b;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #f59e0b;">Сентябрь</span>
+                                        <span class="week-dates">Подготовительный этап</span>
+                                    </div>
+                                    <h5>🔍 Исследование и подготовка</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Артем + Иван</span>
+                                            <ul>
+                                                <li>📊 Анализ венчурного рынка СНГ</li>
+                                                <li>📋 Подготовка бизнес-плана и финмодели</li>
+                                                <li>🎯 Определение target инвесторов</li>
+                                                <li>📈 Сбор метрик продукта для pitch deck</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #8b5cf6;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #8b5cf6;">Октябрь</span>
+                                        <span class="week-dates">Активный поиск</span>
+                                    </div>
+                                    <h5>🤝 Networking и питчинг</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Иван (CEO)</span>
+                                            <ul>
+                                                <li>🎤 Питчи потенциальным инвесторам</li>
+                                                <li>🌐 Networking на отраслевых мероприятиях</li>
+                                                <li>📧 Cold outreach к венчурным фондам</li>
+                                                <li>🔄 Итерации pitch deck по фидбэку</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #10b981;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #10b981;">Ноябрь</span>
+                                        <span class="week-dates">Заключение сделки</span>
+                                    </div>
+                                    <h5>📝 Due diligence и закрытие</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Команда + юристы</span>
+                                            <ul>
+                                                <li>📋 Due diligence процесс</li>
+                                                <li>⚖️ Переговоры по условиям инвестиций</li>
+                                                <li>📄 Заключение инвестиционного договора</li>
+                                                <li>💰 Получение первого транша</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3: Пост-инвестиционное развитие -->
+                    <div class="phase-block">
+                        <div class="phase-header">
+                            <h3>Фаза 3: Пост-инвестиционное масштабирование</h3>
+                            <span class="phase-period">С момента получения инвестиций (планируемо Q4 2025 - Q2 2026)</span>
+                            <div class="phase-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 5%"></div>
+                                </div>
+                                <span>5% готовности</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Post-Investment Strategy -->
+                        <div class="phase-goals" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0); padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid #10b981;">
+                            <h5 style="color: #065f46; margin-bottom: 1.5rem;">🚀 Стратегические направления после получения инвестиций:</h5>
+                            
+                            <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                                <h6 style="color: #065f46; margin-bottom: 1rem;">⚡ Первые 3 месяца (Quick Wins):</h6>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                    <div>
+                                        <strong>👥 Команда:</strong><br>
+                                        <small>• Масштабирование команды до 10-12 человек<br>
+                                        • Найм Senior разработчиков<br>
+                                        • Усиление продуктовой команды</small>
+                                    </div>
+                                    <div>
+                                        <strong>🎯 Продукт:</strong><br>
+                                        <small>• Запуск MVP для внешних клиентов<br>
+                                        • 2-3 пилотных внешних проекта<br>
+                                        • Автоматизация ключевых процессов</small>
+                                    </div>
+                                    <div>
+                                        <strong>💼 Бизнес:</strong><br>
+                                        <small>• Юридическое оформление структуры<br>
+                                        • Налаживание продаж и маркетинга<br>
+                                        • Валидация unit-экономики</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 8px;">
+                                <h6 style="color: #065f46; margin-bottom: 1rem;">🎯 Долгосрочные цели (6-12 месяцев):</h6>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                                    <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #34d399;">
+                                        <strong>📈 Рост продукта</strong><br>
+                                        <small>• Выход на внешний рынок СНГ<br>
+                                        • 15-20 корпоративных клиентов<br>
+                                        • Интеграции с ERP системами<br>
+                                        • Мобильное приложение</small>
+                                    </div>
+                                    <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #34d399;">
+                                        <strong>💰 Финансовые метрики</strong><br>
+                                        <small>• ARR $500k-1M<br>
+                                        • Positive Unit Economics<br>
+                                        • Подготовка к Series A<br>
+                                        • Break-even операций</small>
+                                    </div>
+                                    <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #34d399;">
+                                        <strong>🌐 Масштабирование</strong><br>
+                                        <small>• Расширение в соседние страны<br>
+                                        • Partnerships с крупными дистрибуторами<br>
+                                        • Франчайзинговая модель<br>
+                                        • AI/ML автоматизация</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Investment Usage Plan -->
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h5 style="color: var(--gray-800); margin-bottom: 1.5rem; text-align: center;">💰 План использования инвестиций ($150-300k)</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #cbd5e1;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍💻</div>
+                                    <strong>40-50%</strong><br>
+                                    <small style="color: #64748b;">Команда и зарплаты</small>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #cbd5e1;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                                    <strong>25-30%</strong><br>
+                                    <small style="color: #64748b;">Продуктовое развитие</small>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #cbd5e1;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📢</div>
+                                    <strong>15-20%</strong><br>
+                                    <small style="color: #64748b;">Маркетинг и продажи</small>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #cbd5e1;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div>
+                                    <strong>10-15%</strong><br>
+                                    <small style="color: #64748b;">Операционные расходы</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key Milestones -->
+                        <div style="margin-top: 2rem;">
+                            <h5 style="color: var(--gray-800); margin-bottom: 1.5rem; text-align: center;">🎯 Ключевые вехи пост-инвестиционного периода</h5>
+                            <div class="weeks-grid">
+                                <div class="week-card" style="border-left: 4px solid #3b82f6;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #3b82f6;">Месяц 1-3</span>
+                                        <span class="week-dates">Foundation</span>
+                                    </div>
+                                    <h5>🏗️ Закладка фундамента</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Новая команда</span>
+                                            <ul>
+                                                <li>🤝 Онбординг новых сотрудников</li>
+                                                <li>🏢 Юридическое структурирование</li>
+                                                <li>📋 Процессы и методологии</li>
+                                                <li>🎯 Первые внешние пилоты</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #8b5cf6;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #8b5cf6;">Месяц 4-9</span>
+                                        <span class="week-dates">Growth</span>
+                                    </div>
+                                    <h5>📈 Активный рост</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Полная команда</span>
+                                            <ul>
+                                                <li>🚀 Запуск на внешний рынок</li>
+                                                <li>💰 Первые коммерческие контракты</li>
+                                                <li>📊 Достижение Product-Market Fit</li>
+                                                <li>🌐 Expansion в соседние рынки</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="week-card" style="border-left: 4px solid #10b981;">
+                                    <div class="week-header">
+                                        <span class="week-number" style="background: #10b981;">Месяц 10-12</span>
+                                        <span class="week-dates">Scale</span>
+                                    </div>
+                                    <h5>⚡ Масштабирование</h5>
+                                    <div class="tasks-list">
+                                        <div class="task-item">
+                                            <span class="team-member">Scale-up команда</span>
+                                            <ul>
+                                                <li>💼 Подготовка к Series A</li>
+                                                <li>🎯 Достижение break-even</li>
+                                                <li>🌍 Международная экспансия</li>
+                                                <li>🤖 AI/ML автоматизация</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Overview -->
+                <div class="team-overview">
+                    <h3>Состав команды</h3>
+                    <div class="team-grid">
+                        <div class="team-member-card">
+                            <h4>Анна</h4>
+                            <span class="role">Проект-менеджер</span>
+                            <span class="capacity">40 ч/неделя</span>
+                        </div>
+                        <div class="team-member-card">
+                            <h4>Вадим</h4>
+                            <span class="role">Backend (техлид)</span>
+                            <span class="capacity">40 ч/неделя</span>
+                        </div>
+                        <div class="team-member-card">
+                            <h4>Ильяс</h4>
+                            <span class="role">Frontend</span>
+                            <span class="capacity">40 ч/неделя</span>
+                        </div>
+                        <div class="team-member-card">
+                            <h4>Иван</h4>
+                            <span class="role">Product/CEO</span>
+                            <span class="capacity">40 ч/неделя</span>
+                        </div>
+                        <div class="team-member-card">
+                            <h4>Алексей</h4>
+                            <span class="role">Архитектор/DevOps</span>
+                            <span class="capacity">20 ч/неделя</span>
+                        </div>
+                        <div class="team-member-card">
+                            <h4>Артем</h4>
+                            <span class="role">Консультант</span>
+                            <span class="capacity">10 ч/неделя</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Claude Training Section -->
+        <section id="claude-training" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Тренинг по использованию Claude AI</h2>
+                    <p>Полное руководство по эффективному использованию Claude Pro подписки</p>
+                </div>
+
+                <!-- Training Overview -->
+                <div class="training-overview" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 2rem; border-radius: 16px; margin-bottom: 3rem; border-left: 4px solid #0ea5e9;">
+                    <h3 style="color: #0c4a6e; margin-bottom: 1.5rem;">🎯 Что вы узнаете в этом тренинге</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #bae6fd;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💳</div>
+                            <h4 style="color: #0c4a6e; margin-bottom: 0.5rem;">Подписка и оплата</h4>
+                            <p style="color: #475569; font-size: 0.875rem;">Как оформить Claude Pro за $20/месяц и оплатить из России</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #bae6fd;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                            <h4 style="color: #0c4a6e; margin-bottom: 0.5rem;">Базовые принципы</h4>
+                            <p style="color: #475569; font-size: 0.875rem;">Основы эффективного промптинга и работы с контекстом</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #bae6fd;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔧</div>
+                            <h4 style="color: #0c4a6e; margin-bottom: 0.5rem;">Продвинутые функции</h4>
+                            <p style="color: #475569; font-size: 0.875rem;">Projects, Artifacts, анализ изображений и кода</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #bae6fd;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💼</div>
+                            <h4 style="color: #0c4a6e; margin-bottom: 0.5rem;">Практические кейсы</h4>
+                            <p style="color: #475569; font-size: 0.875rem;">Реальные примеры использования в проекте Lima</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Claude Pro Benefits -->
+                <div class="claude-benefits" style="margin-bottom: 3rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--gray-900);">💎 Claude Pro vs Бесплатная версия</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div style="background: #fef2f2; padding: 2rem; border-radius: 12px; border-left: 4px solid #ef4444;">
+                            <h4 style="color: #dc2626; margin-bottom: 1rem;">🆓 Бесплатная версия</h4>
+                            <ul style="color: #6b7280; margin: 0; padding-left: 1rem;">
+                                <li>~20 запросов каждые 8 часов</li>
+                                <li>Ограниченный контекст (60 кб текста)</li>
+                                <li>Только Claude 3.5 Sonnet</li>
+                                <li>Время сессии: до 15 минут</li>
+                                <li>Медленная работа в пиковые часы</li>
+                                <li>С Artifacts: ~10 запросов за 8 часов</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f0fdf4; padding: 2rem; border-radius: 12px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #16a34a; margin-bottom: 1rem;">💎 Claude Pro ($20/месяц)</h4>
+                            <ul style="color: #6b7280; margin: 0; padding-left: 1rem;">
+                                <li>~100-120 запросов за 8 часов</li>
+                                <li>Полный контекст (200К токенов)</li>
+                                <li>Все модели: Sonnet, Opus, Haiku</li>
+                                <li>Неограниченное время сессий</li>
+                                <li>Приоритетный доступ</li>
+                                <li>Projects и расширенные Artifacts</li>
+                                <li>Ранний доступ к новым функциям</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yandex Browser Recommendation -->
+                <div class="yandex-browser-block" style="background: linear-gradient(135deg, #fff7ed, #fed7a3); padding: 2rem; border-radius: 16px; margin-bottom: 2rem; border-left: 4px solid #ea580c; box-shadow: 0 4px 16px rgba(234, 88, 12, 0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: #ea580c; color: white; padding: 0.5rem; border-radius: 8px; font-size: 1.5rem;">🌐</div>
+                        <h3 style="color: #9a3412; margin: 0;">Рекомендация: Яндекс.Браузер для русскоязычного просмотра</h3>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                        <div>
+                            <h4 style="color: #9a3412; margin-bottom: 1rem;">🎯 Почему Яндекс.Браузер?</h4>
+                            <ul style="color: #7c2d12; line-height: 1.6; margin-bottom: 1.5rem;">
+                                <li><strong>Автоперевод видео:</strong> Встроенная функция перевода YouTube видео на русский язык</li>
+                                <li><strong>Качественный перевод:</strong> Нейросетевой перевод с сохранением технической терминологии</li>
+                                <li><strong>Синхронизация субтитров:</strong> Автоматическая синхронизация с видео</li>
+                                <li><strong>Бесплатно:</strong> Функция доступна без дополнительных платежей</li>
+                                <li><strong>Удобство:</strong> Работает прямо в браузере, не требует дополнительных расширений</li>
+                            </ul>
+                            
+                            <div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #fed7a3;">
+                                <strong style="color: #9a3412;">💡 Как включить перевод:</strong>
+                                <ol style="color: #7c2d12; margin-top: 0.5rem; padding-left: 1rem;">
+                                    <li>Откройте YouTube видео в Яндекс.Браузере</li>
+                                    <li>Нажмите на иконку перевода рядом с субтитрами</li>
+                                    <li>Выберите "Русский" в настройках перевода</li>
+                                    <li>Наслаждайтесь обучением на родном языке!</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="background: white; padding: 2rem; border-radius: 12px; border: 2px solid #fed7a3;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">📺</div>
+                                <h4 style="color: #9a3412; margin-bottom: 1rem;">Смотрите обучающие видео по Claude на русском!</h4>
+                                <a href="https://browser.yandex.ru/" target="_blank" style="background: #ea580c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease;">
+                                    Скачать Яндекс.Браузер
+                                </a>
+                                <p style="color: #7c2d12; font-size: 0.875rem; margin-top: 1rem;">Бесплатно • Официальный сайт • Русский интерфейс</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Pay from Uzbekistan -->
+                <div class="payment-guide" style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 2rem; border-radius: 16px; margin-bottom: 3rem; border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #92400e; margin-bottom: 1.5rem;">💳 Как оплатить Claude Pro из Узбекистана</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #fbbf24;">
+                            <h4 style="color: #92400e; margin-bottom: 1rem;">🏦 Международные карты</h4>
+                            <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Банковские карты Visa/Mastercard с поддержкой международных платежей</p>
+                            <div style="background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #92400e;">Банки Узбекистана:</strong><br>
+                                <small style="color: #6b7280;">• UzCard International<br>• HUMO International<br>• Visa/Mastercard от крупных банков<br>• Виртуальные карты</small>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #fbbf24;">
+                            <h4 style="color: #92400e; margin-bottom: 1rem;">💰 Электронные кошельки</h4>
+                            <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Международные платежные системы</p>
+                            <div style="background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #92400e;">Доступные варианты:</strong><br>
+                                <small style="color: #6b7280;">• PayPal (при наличии)<br>• Wise (бывший TransferWise)<br>• Криптокошельки<br>• WebMoney</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem;">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;">⚠️ Важные моменты для Узбекистана:</h4>
+                        <ul style="color: #6b7280; font-size: 0.875rem; line-height: 1.6;">
+                            <li>Убедитесь, что ваша карта поддерживает международные онлайн-платежи</li>
+                            <li>Некоторые банки требуют предварительного уведомления о международных транзакциях</li>
+                            <li>Рекомендуется использовать VPN для стабильного доступа к Claude</li>
+                            <li>Проверьте лимиты вашего банка на международные переводы</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Screenshots with Descriptions -->
+                <div class="screenshots-section">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--gray-900);">📸 Практические примеры работы с Claude</h3>
+                    <p style="text-align: center; color: var(--gray-600); margin-bottom: 3rem; font-style: italic;">Кликните на любое изображение для просмотра в полном размере</p>
+                    
+                    <!-- Welcome Interface Example - moved to top -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--blue-100); box-shadow: 0 4px 16px rgba(59, 130, 246, 0.04);">
+                        <h4 style="color: var(--blue-700); margin-bottom: 1rem;">🎨 Интерфейс и начало работы</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                            <div>
+                                <img src="pictures/Screenshot at Jun 16 07-53-49.png" alt="Claude Welcome Interface" class="screenshot-image" onclick="openLightbox('pictures/Screenshot at Jun 16 07-53-49.png', 'Интерфейс Claude - начало работы')" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            </div>
+                            <div>
+                                <h5 style="color: var(--gray-800); margin-bottom: 1rem;">Основные элементы интерфейса:</h5>
+                                <ul style="color: var(--gray-600); line-height: 1.6;">
+                                    <li><strong>Выбор модели:</strong> Claude Sonnet 4 для сбалансированной работы</li>
+                                    <li><strong>Research BETA:</strong> Функция веб-поиска для актуальной информации</li>
+                                    <li><strong>Быстрые команды:</strong> Write, Learn, Code, Life stuff, From your apps</li>
+                                    <li><strong>История чатов:</strong> Все проекты сохраняются и легко доступны</li>
+                                    <li><strong>Project knowledge:</strong> Возможность загружать документы для контекста</li>
+                                </ul>
+                                <div style="background: #fffbeb; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                    <strong style="color: #d97706;">💡 Первые шаги:</strong>
+                                    <small style="color: #475569; display: block; margin-top: 0.5rem;">Начните с простых задач, постепенно усложняя запросы. Claude лучше понимает детальные инструкции с контекстом.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artifacts Example - NEW -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--blue-100); box-shadow: 0 4px 16px rgba(59, 130, 246, 0.04);">
+                        <h4 style="color: var(--blue-700); margin-bottom: 1rem;">⚡ Artifacts - интерактивное создание контента</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                            <div>
+                                <h5 style="color: var(--gray-800); margin-bottom: 1rem;">Пример: Конкурентный анализ Lima CRM с визуализацией</h5>
+                                <ul style="color: var(--gray-600); line-height: 1.6;">
+                                    <li><strong>Интерактивные графики:</strong> Claude создал Chart.js диаграмму прямо в чате</li>
+                                    <li><strong>Живое редактирование:</strong> Возможность изменения параметров в реальном времени</li>
+                                    <li><strong>Адаптивность:</strong> Автоматическая подстройка под мобильные устройства</li>
+                                    <li><strong>Экспорт данных:</strong> Готовый код для интеграции в проект</li>
+                                    <li><strong>Итеративное улучшение:</strong> Быстрые правки по фидбэку</li>
+                                </ul>
+                                <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                    <strong style="color: #166534;">🚀 Мощь Artifacts:</strong>
+                                    <small style="color: #475569; display: block; margin-top: 0.5rem;">Artifacts позволяет Claude создавать интерактивный контент: от простых графиков до полноценных веб-приложений, которые можно тестировать и редактировать прямо в чате.</small>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="pictures/Artifact.png" alt="Claude Artifacts Example" class="screenshot-image" onclick="openLightbox('pictures/Artifact.png', 'Claude Artifacts - интерактивная диаграмма конкурентного анализа')" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            </div>
+                        </div>
+                        
+                        <!-- Artifacts Details -->
+                        <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #0ea5e9;">
+                            <h6 style="color: #0c4a6e; margin-bottom: 1rem;">🔧 Что можно создавать с Artifacts:</h6>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong style="color: #0c4a6e;">📊 Графики и диаграммы</strong><br>
+                                    <small style="color: #475569;">Chart.js, D3.js, интерактивные дашборды</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong style="color: #0c4a6e;">🌐 Веб-приложения</strong><br>
+                                    <small style="color: #475569;">HTML/CSS/JS, калькуляторы, формы</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong style="color: #0c4a6e;">📝 Документы</strong><br>
+                                    <small style="color: #475569;">Презентации, отчеты, форматированный текст</small>
+                                </div>
+                                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                    <strong style="color: #0c4a6e;">🎨 SVG и анимации</strong><br>
+                                    <small style="color: #475569;">Логотипы, иконки, интерактивные элементы</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Management Example -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--blue-100); box-shadow: 0 4px 16px rgba(59, 130, 246, 0.04);">
+                        <h4 style="color: var(--blue-700); margin-bottom: 1rem;">🗂️ Управление проектами с Claude Projects</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                            <div>
+                                <img src="pictures/Screenshot at Jun 16 07-57-12.png" alt="Claude Projects для Lima" class="screenshot-image" onclick="openLightbox('pictures/Screenshot at Jun 16 07-57-12.png', 'Claude Projects - управление проектной документацией Lima')" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            </div>
+                            <div>
+                                <h5 style="color: var(--gray-800); margin-bottom: 1rem;">Как мы используем Claude Projects в Lima:</h5>
+                                <ul style="color: var(--gray-600); line-height: 1.6;">
+                                    <li><strong>Загрузка проектной документации:</strong> Все интервью, технические задания, методологии</li>
+                                    <li><strong>Контекстная работа:</strong> Claude "помнит" специфику проекта Lima на протяжении всех сессий</li>
+                                    <li><strong>Управление задачами:</strong> От technical debt до roadmap планирования</li>
+                                    <li><strong>Анализ и инсайты:</strong> Автоматическое выявление паттернов в документах</li>
+                                    <li><strong>Версионность:</strong> Отслеживание изменений в проектных файлах</li>
+                                </ul>
+                                <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                    <strong style="color: #1e40af;">💡 Pro Tip:</strong>
+                                    <small style="color: #475569; display: block; margin-top: 0.5rem;">Загружайте в Projects все ключевые документы проекта. Claude сможет давать более точные и контекстные ответы, учитывая специфику вашего бизнеса.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Example -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--blue-100); box-shadow: 0 4px 16px rgba(59, 130, 246, 0.04);">
+                        <h4 style="color: var(--blue-700); margin-bottom: 1rem;">🔍 Глубокий анализ и исследования</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                            <div>
+                                <h5 style="color: var(--gray-800); margin-bottom: 1rem;">Пример: Анализ рынка CRM в Центральной Азии</h5>
+                                <ul style="color: var(--gray-600); line-height: 1.6;">
+                                    <li><strong>Конкурентный анализ:</strong> Детальное исследование 8+ конкурентов</li>
+                                    <li><strong>Структурированный отчет:</strong> Автоматическое форматирование результатов</li>
+                                    <li><strong>Выводы и рекомендации:</strong> Практические советы для Lima</li>
+                                    <li><strong>Многоязычность:</strong> Анализ источников на русском и английском</li>
+                                    <li><strong>Web Research:</strong> Использование функции поиска для актуальных данных</li>
+                                </ul>
+                                <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                    <strong style="color: #166534;">💡 Результат:</strong>
+                                    <small style="color: #475569; display: block; margin-top: 0.5rem;">Получили comprehensive анализ рынка за 30 минут вместо недель ручного исследования. Claude выявил ключевые возможности и риски для позиционирования Lima.</small>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="pictures/deep_research.png" alt="Claude Research Example" class="screenshot-image" onclick="openLightbox('pictures/deep_research.png', 'Claude Research - глубокий анализ CRM рынка в Центральной Азии')" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anthropic Video Tutorials -->
+                <div class="anthropic-tutorials" style="background: linear-gradient(135deg, #fdf4ff, #f3e8ff); padding: 2rem; border-radius: 16px; margin-bottom: 3rem; border-left: 4px solid #8b5cf6; box-shadow: 0 4px 16px rgba(139, 92, 246, 0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: #8b5cf6; color: white; padding: 0.5rem; border-radius: 8px; font-size: 1.5rem;">🎓</div>
+                        <h3 style="color: #6b21a8; margin: 0;">Официальные обучающие видео от Anthropic</h3>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">📚 Основы работы с Claude</h4>
+                            <ul style="color: #6b21a8; font-size: 0.875rem; line-height: 1.6;">
+                                <li><strong>Intro to Artifacts:</strong> Создание интерактивного контента</li>
+                                <li><strong>Intro to Projects:</strong> Организация рабочих пространств</li>
+                                <li><strong>Claude for Engineering:</strong> Помощь в разработке ПО</li>
+                                <li><strong>Using Research:</strong> Поиск информации и анализ</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">💼 Профессиональное применение</h4>
+                            <ul style="color: #6b21a8; font-size: 0.875rem; line-height: 1.6;">
+                                <li><strong>Claude for Marketing:</strong> Создание контента и стратегий</li>
+                                <li><strong>Claude for HR:</strong> Подбор персонала и документооборот</li>
+                                <li><strong>Claude for Sales:</strong> Работа с клиентами и CRM</li>
+                                <li><strong>Claude for Product Management:</strong> Планирование продукта</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">🔧 Интеграции и инструменты</h4>
+                            <ul style="color: #6b21a8; font-size: 0.875rem; line-height: 1.6;">
+                                <li><strong>GitHub integration:</strong> Работа с кодом и репозиториями</li>
+                                <li><strong>Google Docs integration:</strong> Совместная работа с документами</li>
+                                <li><strong>Analysis tool:</strong> Обработка данных и файлов</li>
+                                <li><strong>Google Workspace:</strong> Интеграция с рабочими инструментами</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 12px; border: 2px solid #c4b5fd; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎥</div>
+                        <h4 style="color: #6b21a8; margin-bottom: 1rem;">Смотрите официальные туториалы Anthropic</h4>
+                        <p style="color: #7c3aed; margin-bottom: 1.5rem;">12 подробных видеоурока по работе с Claude для разных профессий и задач</p>
+                        
+                        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://support.anthropic.com/en/collections/10548294-video-tutorials" target="_blank" style="background: #8b5cf6; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease;">
+                                📚 Открыть туториалы
+                            </a>
+                            <a href="https://browser.yandex.ru/" target="_blank" style="background: #ea580c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease;">
+                                🌐 Скачать Яндекс.Браузер
+                            </a>
+                        </div>
+                        
+                        <div style="background: #fdf4ff; padding: 1rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid #e9d5ff;">
+                            <strong style="color: #6b21a8;">💡 Совет:</strong>
+                            <p style="color: #7c3aed; font-size: 0.875rem; margin: 0.5rem 0 0 0;">Откройте туториалы в Яндекс.Браузере для автоматического перевода на русский язык. Изучайте Claude на родном языке и применяйте знания в проекте Lima!</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #0ea5e9;">
+                        <h5 style="color: #0c4a6e; margin-bottom: 1rem;">🎯 Рекомендуемая последовательность изучения:</h5>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #0c4a6e;">1. Основы</strong><br>
+                                <small style="color: #475569;">Intro to Projects → Intro to Artifacts</small>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #0c4a6e;">2. Интеграции</strong><br>
+                                <small style="color: #475569;">Google Docs → GitHub → Analysis tool</small>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #0c4a6e;">3. Профессиональное применение</strong><br>
+                                <small style="color: #475569;">По вашей специализации (Marketing, Engineering, etc.)</small>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #0c4a6e;">4. Продвинутые возможности</strong><br>
+                                <small style="color: #475569;">Research → Product Management</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Practices -->
+                <div class="best-practices" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff); padding: 2rem; border-radius: 16px; margin-bottom: 3rem; border-left: 4px solid #8b5cf6;">
+                    <h3 style="color: #6b21a8; margin-bottom: 1.5rem;">🏆 Лучшие практики работы с Claude</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">📝 Качественные промпты</h4>
+                            <div style="font-size: 0.875rem; color: #4b5563;">
+                                <p><strong>✅ Хорошо:</strong> "Проанализируй CRM-систему для фармацевтических компаний в Казахстане. Учти специфику дистрибуции лекарств и регулятивные требования."</p>
+                                <p><strong>❌ Плохо:</strong> "Расскажи про CRM"</p>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">🎯 Контекст и роли</h4>
+                            <div style="font-size: 0.875rem; color: #4b5563;">
+                                <p>Задавайте Claude роль: "Ты - эксперт по фармацевтическому бизнесу" или "Ты - senior разработчик с опытом в AI"</p>
+                                <p>Предоставляйте контекст проекта для более точных ответов</p>
+                            </div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #c4b5fd;">
+                            <h4 style="color: #6b21a8; margin-bottom: 1rem;">🔄 Итеративная работа</h4>
+                            <div style="font-size: 0.875rem; color: #4b5563;">
+                                <p>Разбивайте сложные задачи на этапы</p>
+                                <p>Переспрашивайте и уточняйте</p>
+                                <p>Используйте фидбэк для улучшения результатов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practical Use Cases for Lima -->
+                <div class="lima-use-cases" style="margin-bottom: 3rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--gray-900);">🚀 Кейсы использования Claude в проекте Lima</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                            <h4 style="color: #1e40af; margin-bottom: 1rem;">📊 Продуктовая аналитика</h4>
+                            <ul style="color: #475569; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Анализ пользовательского поведения</li>
+                                <li>A/B тестирование гипотез</li>
+                                <li>Исследование конкурентов</li>
+                                <li>Планирование roadmap</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #10b981;">
+                            <h4 style="color: #047857; margin-bottom: 1rem;">💻 Разработка и код</h4>
+                            <ul style="color: #475569; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Code review и рефакторинг</li>
+                                <li>Написание технических заданий</li>
+                                <li>Автоматизация процессов</li>
+                                <li>Debugging и оптимизация</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                            <h4 style="color: #d97706; margin-bottom: 1rem;">📋 Управление проектом</h4>
+                            <ul style="color: #475569; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Планирование спринтов</li>
+                                <li>Анализ рисков</li>
+                                <li>Подготовка отчетов</li>
+                                <li>Коммуникация с командой</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #8b5cf6;">
+                            <h4 style="color: #7c3aed; margin-bottom: 1rem;">💰 Инвестиционная подготовка</h4>
+                            <ul style="color: #475569; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Подготовка pitch deck</li>
+                                <li>Финансовое моделирование</li>
+                                <li>Due diligence материалы</li>
+                                <li>Анализ венчурного рынка</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CEO Section -->
+        <section id="ceo" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Портрет идеального CEO</h2>
+                    <p>Требования к руководителю проекта Lima</p>
+                </div>
+
+                <!-- CEO Requirements -->
+                <div class="ceo-requirements">
+                    <div class="requirement-category">
+                        <h3>Профессиональные компетенции</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">💼</div>
+                                <div class="skill-content">
+                                    <h4>B2B SaaS опыт</h4>
+                                    <p>Глубокое понимание B2B SaaS продуктов, длинные циклы продаж, корпоративный сегмент</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🏥</div>
+                                <div class="skill-content">
+                                    <h4>Знание фармацевтической отрасли</h4>
+                                    <p>Специфика фармацевтического бизнеса, дистрибуция, регулятивные требования</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">💰</div>
+                                <div class="skill-content">
+                                    <h4>Опыт привлечения инвестиций</h4>
+                                    <p>Опыт привлечения $100k+ венчурного финансирования, питч-деки, due diligence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="requirement-category">
+                        <h3>Личностные качества</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">🧠</div>
+                                <div class="skill-content">
+                                    <h4>Стратегическое мышление</h4>
+                                    <p>Долгосрочная перспектива при ограниченных ресурсах, адаптивность</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">👑</div>
+                                <div class="skill-content">
+                                    <h4>Лидерство</h4>
+                                    <p>Мотивация небольшой команды, управление техническими командами</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">💬</div>
+                                <div class="skill-content">
+                                    <h4>Коммуникации</h4>
+                                    <p>Презентации инвесторам, переговоры высокого уровня</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="requirement-category">
+                        <h3>Технические компетенции</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">⚡</div>
+                                <div class="skill-content">
+                                    <h4>Современные технологии</h4>
+                                    <p>Cloud-инфраструктура, API, микросервисы, AI интеграция</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🎯</div>
+                                <div class="skill-content">
+                                    <h4>Продуктовое мышление</h4>
+                                    <p>Продуктовый менеджмент, road mapping, UX/UI понимание</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ivan Analysis -->
+                <div class="candidate-analysis">
+                    <div class="analysis-header">
+                        <h3>Анализ кандидатуры Ивана</h3>
+                        <p>Оценка соответствия требованиям позиции CEO</p>
+                    </div>
+
+                    <div class="analysis-grid">
+                        <div class="analysis-section strengths">
+                            <h4>Сильные стороны</h4>
+                            <div class="analysis-list">
+                                <div class="analysis-item positive">
+                                    <span class="check-icon">✅</span>
+                                    <div class="item-content">
+                                        <h5>Глубокое знание продукта Lima</h5>
+                                        <p>2 года работы над проектом, понимание архитектуры</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item positive">
+                                    <span class="check-icon">✅</span>
+                                    <div class="item-content">
+                                        <h5>Понимание фармацевтической отрасли</h5>
+                                        <p>Знание специфики клиентов и бизнес-процессов</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item positive">
+                                    <span class="check-icon">✅</span>
+                                    <div class="item-content">
+                                        <h5>Установленные отношения</h5>
+                                        <p>Связи с внутренними клиентами</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item positive">
+                                    <span class="check-icon">✅</span>
+                                    <div class="item-content">
+                                        <h5>Продуктовое мышление</h5>
+                                        <p>Сильные навыки продуктового менеджмента</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analysis-section limitations">
+                            <h4>Ограничения и риски</h4>
+                            <div class="analysis-list">
+                                <div class="analysis-item negative">
+                                    <span class="check-icon">⚠️</span>
+                                    <div class="item-content">
+                                        <h5>Планы на увольнение</h5>
+                                        <p>Критический риск потери ключевого сотрудника</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item negative">
+                                    <span class="check-icon">⚠️</span>
+                                    <div class="item-content">
+                                        <h5>Ограниченный опыт инвестиций</h5>
+                                        <p>Отсутствие опыта привлечения венчурного финансирования</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item negative">
+                                    <span class="check-icon">⚠️</span>
+                                    <div class="item-content">
+                                        <h5>Профессиональное выгорание</h5>
+                                        <p>Возможная усталость от длительной работы над проектом</p>
+                                    </div>
+                                </div>
+                                <div class="analysis-item negative">
+                                    <span class="check-icon">⚠️</span>
+                                    <div class="item-content">
+                                        <h5>Отсутствие опыта стартапа</h5>
+                                        <p>Нет опыта управления стартапом на стадии роста</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations">
+                        <h4>Рекомендации</h4>
+                        <div class="recommendation-cards">
+                            <div class="recommendation-card immediate">
+                                <h5>Немедленные действия</h5>
+                                <p>Провести откровенную беседу о долгосрочных планах и мотивации. Выяснить возможности удержания в проекте.</p>
+                            </div>
+                            <div class="recommendation-card development">
+                                <h5>Развитие компетенций</h5>
+                                <p>Обучение навыкам привлечения инвестиций, менторство по фандрайзингу, участие в startup-программах.</p>
+                            </div>
+                            <div class="recommendation-card alternative">
+                                <h5>Альтернативные варианты</h5>
+                                <p>Рассмотреть роль Chief Product Officer при внешнем CEO с опытом венчурного финансирования.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+<script>
+    // Lightbox functionality
+    function openLightbox(imageSrc, caption) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        lightboxImage.src = imageSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close lightbox on background click
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+
+    // Close lightbox on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+</script>
+</html>
