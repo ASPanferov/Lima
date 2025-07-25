@@ -711,8 +711,9 @@ class LimaApp {
             });
         }
 
-        // Update yearly summary
+        // Update yearly summary (September to August cycles)
         const yearlySummary = [];
+        const yearLabels = ['2025-2026', '2026-2027', '2027-2028'];
         for (let year = 1; year <= 3; year++) {
             const yearMonths = monthlyData.slice((year - 1) * 12, year * 12);
             const endUsers = yearMonths[yearMonths.length - 1].users;
@@ -722,7 +723,7 @@ class LimaApp {
             const totalProfit = yearMonths.reduce((sum, m) => sum + m.profit, 0);
             
             yearlySummary.push({
-                year,
+                year: yearLabels[year - 1],
                 endUsers,
                 avgMRR: Math.round(avgMRR),
                 totalARR: Math.round(totalARR),
@@ -733,7 +734,7 @@ class LimaApp {
 
         summaryContainer.innerHTML = yearlySummary.map(year => `
             <div class="year-summary">
-                <h5>Год ${year.year}</h5>
+                <h5>${year.year}</h5>
                 <div class="summary-metric">
                     <span class="label">Пользователи на конец года</span>
                     <span class="value">${year.endUsers.toLocaleString()}</span>
@@ -757,7 +758,7 @@ class LimaApp {
             </div>
         `).join('');
 
-        // Update monthly breakdown (show first 12 months by default)
+        // Update monthly breakdown (show first 12 months starting from September)
         const monthNames = [
             'Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
             'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'
@@ -765,7 +766,7 @@ class LimaApp {
 
         const breakdown = monthlyData.slice(0, 12).map((data, index) => `
             <div class="month-row">
-                <div class="month-name">${monthNames[index]} 2025</div>
+                <div class="month-name">${monthNames[(index + 8) % 12]} ${index >= 4 ? '2026' : '2025'}</div>
                 <div class="users">${data.users.toLocaleString()}</div>
                 <div class="mrr">$${data.mrr.toLocaleString()}</div>
                 <div class="costs" style="color: #ef4444;">$${data.costs.toLocaleString()}</div>
@@ -817,10 +818,10 @@ class LimaApp {
             const totalCosts = teamCost + acquisitionCost;
             const profit = mrr - totalCosts;
             
-            // Create month labels
+            // Create month labels starting from September
             const monthNames = ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
-            const year = 2025 + Math.floor(month / 12);
-            const monthIndex = month % 12;
+            const monthIndex = (month + 8) % 12; // Start from September (index 8)
+            const year = 2025 + Math.floor((month + 8) / 12);
             labels.push(`${monthNames[monthIndex]} ${year}`);
             
             mrrData.push(mrr);
